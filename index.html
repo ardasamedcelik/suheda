@@ -8,37 +8,51 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        let clicked = false;
         ClickHandle = () => {
             var x = document.getElementById("myAudio");
-
-            x.play();
+            if (clicked == false) {
+                x.play();
+                clicked = true;
+            } else {
+                x.pause();
+                clicked = false;
+            }
         }
     </script>
 </head>
+
 <body class="bg-gray-900">
-    
-<div class="w-screen h-screen flex flex-col lg:flex-row items-center justify-evenly">
-    <p class="text-gray-500 hover:text-gray-400 transition-all">Son aşkımdır bu -sen- ve son çile,<br>
-        Günümün son fecri, sonu artık;<br>
-        Giriver inince gün, aralık<br>
-        Kapımdan gelinlik elbisenle<br>
-        Onu sevmekle geç, ey yaşamak!</p>
-    <h1 onclick="clickHandler" class="text-gray-100 md:text-7xl sm:text-6xl text-5xl hover:text-red-600 transition-all">Suheda &hearts; Umut</h1>
-    <p class="text-gray-500">Son aşkımdır bu -sen- ve son çile,<br>
-        Günümün son fecri, sonu artık;<br>
-        Giriver inince gün, aralık<br>
-        Kapımdan gelinlik elbisenle<br>
-        Onu sevmekle geç, ey yaşamak!</p>
+
+    <div class="w-screen h-screen flex flex-col lg:flex-row items-center justify-evenly">
+        <p class="text-gray-500 hover:text-gray-400 transition-all">Son aşkımdır bu -sen- ve son çile,<br>
+            Günümün son fecri, sonu artık;<br>
+            Giriver inince gün, aralık<br>
+            Kapımdan gelinlik elbisenle<br>
+            Onu sevmekle geç, ey yaşamak!</p>
+        <h1 onclick="clickHandler"
+            class="text-gray-100 md:text-7xl sm:text-6xl text-5xl hover:text-red-600 transition-all">Suheda &hearts;
+            Umut</h1>
+        <p class="text-gray-500 hover:text-gray-400 transition-all">Son aşkımdır bu -sen- ve son çile,<br>
+            Günümün son fecri, sonu artık;<br>
+            Giriver inince gün, aralık<br>
+            Kapımdan gelinlik elbisenle<br>
+            Onu sevmekle geç, ey yaşamak!</p>
     </div>
     <div>
-        <button onclick="ClickHandle()" class="fixed bottom-0  py-5 bg-red-500 text-4xl  text-white w-screen mx-auto">Love Me</button>
+        <button onclick="ClickHandle()"
+            class="fixed bottom-0  py-5 bg-red-500 text-4xl  text-white w-screen mx-auto">Love Me</button>
     </div>
+
+    <div class="fixed bottom-1 right-1"><a href="https://zukrein.me" target="_blank" class="text-gray-300 text-sm">powered by
+            zukrein</a></div>
     <div class="block">
-        <audio id="myAudio" >
+        <audio id="myAudio">
             <source src="./isabel.ogg#t=00:00:12" type="audio/ogg">
             <source src="./isabel.mp3#t=00:00:12" type="audio/mpeg">
             Your browser does not support the audio element.
-          </audio>
+        </audio>
     </div>
 </body>
+
 </html>
